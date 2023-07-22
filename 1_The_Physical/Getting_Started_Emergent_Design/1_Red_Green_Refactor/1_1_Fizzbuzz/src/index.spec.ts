@@ -30,4 +30,8 @@ describe("fizzbuzz", () => {
         expect(()=>fizzbuzz(102)).toThrowError();
     });
 
+    it("should throw error when given -12", ()=>{
+        expect(()=>fizzbuzz(-12)).toThrowError();
+    });
+
 });
