@@ -6,8 +6,8 @@ describe("fizzbuzz", () => {
         expect(typeof fizzbuzz(1)).toBe("string");
     });
 
-    it("should return Fizz when given 3", () => {
-        expect(fizzbuzz(3)).toBe("Fizz");
+    it.each([3,9,42])("should return Fizz when given %i", (n) => {
+        expect(fizzbuzz(n)).toBe("Fizz");
     });
 
     it("should return Buzz when given 5", () => {
@@ -18,17 +18,9 @@ describe("fizzbuzz", () => {
         expect(fizzbuzz(15)).toBe("FizzBuzz");
     });
 
-    it("should return Fizz when given 9", () => {
-        expect(fizzbuzz(9)).toBe("Fizz");
-    });
-
     it("should return 43 when given 43", ()=>{
         expect(fizzbuzz(43)).toBe("43");
     })
-
-    it("should return Fizz when given 42", ()=>{
-        expect(fizzbuzz(42)).toBe("Fizz");
-    });
 
     it("should return FizzBuzz when given 45", ()=>{
         expect(fizzbuzz(45)).toBe("FizzBuzz");
