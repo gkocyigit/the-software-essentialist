@@ -34,4 +34,8 @@ describe("fizzbuzz", () => {
         expect(()=>fizzbuzz(-12)).toThrowError();
     });
 
+    it("should throw error when given non number", ()=>{
+        expect(()=>fizzbuzz("test" as any)).toThrowError();
+    });
+
 });
