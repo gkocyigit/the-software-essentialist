@@ -26,16 +26,8 @@ describe("fizzbuzz", () => {
         expect(fizzbuzz(45)).toBe("FizzBuzz");
     });
 
-    it("should throw error when given 102", ()=>{
-        expect(()=>fizzbuzz(102)).toThrowError();
-    });
-
-    it("should throw error when given -12", ()=>{
-        expect(()=>fizzbuzz(-12)).toThrowError();
-    });
-
-    it("should throw error when given non number", ()=>{
-        expect(()=>fizzbuzz("test" as any)).toThrowError();
+    it.each([102,-12,"test"])("should throw error when given %i", (n)=>{
+        expect(()=>fizzbuzz(n as any)).toThrowError();
     });
 
 });
