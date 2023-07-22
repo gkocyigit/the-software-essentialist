@@ -42,4 +42,8 @@ describe("fizzbuzz", () => {
         expect(() => fizzbuzz(-12)).toThrowError();
     });
 
+    it("should throw error when recieve non-number", () => {
+        expect(() => fizzbuzz("Hello")).toThrowError();
+    });
+
 });
