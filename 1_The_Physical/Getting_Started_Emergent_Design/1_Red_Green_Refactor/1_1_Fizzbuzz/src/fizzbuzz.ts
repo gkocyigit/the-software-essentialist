@@ -1,5 +1,6 @@
 
 export function fizzbuzz(n: any) {
+    if(typeof n !== "number") throw new Error("Not a number");
     if(n>100 || n<0) throw new Error("Number not in range");
     let result = "";
     if (n % 3 === 0) result+="Fizz";
