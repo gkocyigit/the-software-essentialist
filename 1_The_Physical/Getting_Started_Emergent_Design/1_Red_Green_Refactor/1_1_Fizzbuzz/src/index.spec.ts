@@ -26,4 +26,8 @@ describe("fizzbuzz", () => {
         expect(fizzbuzz(45)).toBe("FizzBuzz");
     });
 
+    it("should throw error when given 102", ()=>{
+        expect(()=>fizzbuzz(102)).toThrowError();
+    });
+
 });
