@@ -2,15 +2,11 @@ import { palindromeChecker } from "./index"
 describe('palindrome checker', () => {
 
     it.each([
-        ['mom', true],
-        ['Mom', true],
-        ['MoM', true],
-    ])((`should return true when given %s`), (word, expected) => {
+        [true, 'mom'],
+        [true, 'Mom'],
+        [true, 'MoM'],
+        [false, 'Momx']
+    ])((`should return %s when given %s`), (expected,word) => {
         expect(palindromeChecker(word)).toBe(expected);
     });
-
-    it('should return false when given "Momx"', () => {
-        expect(palindromeChecker('Momx')).toBe(false);
-    });
-
 })
