@@ -5,7 +5,8 @@ describe('palindrome checker', () => {
         [true, 'mom'],
         [true, 'Mom'],
         [true, 'MoM'],
-        [false, 'Momx']
+        [false, 'Momx'],
+        [true, 'xMomx'],
     ])((`should return %s when given %s`), (expected,word) => {
         expect(palindromeChecker(word)).toBe(expected);
     });
