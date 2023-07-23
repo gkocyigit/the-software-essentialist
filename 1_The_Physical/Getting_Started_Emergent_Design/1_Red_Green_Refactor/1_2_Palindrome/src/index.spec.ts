@@ -9,4 +9,8 @@ describe('palindrome checker', () => {
         expect(palindromeChecker(word)).toBe(expected);
     });
 
+    it('should return false when given "Momx"', () => {
+        expect(palindromeChecker('Momx')).toBe(false);
+    });
+
 })
