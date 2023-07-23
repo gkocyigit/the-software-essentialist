@@ -1,2 +1,3 @@
-export function palindromeChecker(word: string){
+export function palindromeChecker(word: string): boolean{
+    return true;
 }
