@@ -10,6 +10,7 @@ describe('palindrome checker', () => {
         [true, 'Was It A Rat I Saw'],
         [true, 'Never Odd Or Even'],
         [false, 'Never Odd Or Even1'],
+        [true, '1Never Odd Or Even1'],
     ])((`should return %s when given %s`), (expected,word) => {
         expect(palindromeChecker(word)).toBe(expected);
     });
