@@ -52,6 +52,15 @@ describe('PasswordValidator', () => {
       expect(result.errors.length).toBeGreaterThan(0);
     });
 
+    it("knows that a password is valid if it contains a number", () => {
+      //Arrange
+      //Act
+      const result = PasswordValidator.validate("AaAa1");
+      //Assert
+      expect(result.isValid).toBeTruthy();
+      expect(result.errors.length).toBe(0);
+    });
+
   })
 })
 
