@@ -43,6 +43,15 @@ describe('PasswordValidator', () => {
       expect(result.errors.length).toBe(0);
     });
 
+    it("knows that a password is not valid if it does not contain a number", () => {
+      //Arrange
+      //Act
+      const result = PasswordValidator.validate("AaAaA");
+      //Assert
+      expect(result.isValid).toBeFalsy();
+      expect(result.errors.length).toBeGreaterThan(0);
+    });
+
   })
 })
 
