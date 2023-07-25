@@ -34,15 +34,6 @@ describe('PasswordValidator', () => {
       expect(result.errors.length).toBeGreaterThan(0);
     });
 
-    it("knows that a password is valid if it is between 5 and 15 characters", () => {
-      //Arrange
-      //Act
-      const result = PasswordValidator.validate("Aa1Aa1");
-      //Assert
-      expect(result.isValid).toBeTruthy();
-      expect(result.errors.length).toBe(0);
-    });
-
     it("knows that a password is not valid if it does not contain a number", () => {
       //Arrange
       //Act
@@ -50,15 +41,6 @@ describe('PasswordValidator', () => {
       //Assert
       expect(result.isValid).toBeFalsy();
       expect(result.errors.length).toBeGreaterThan(0);
-    });
-
-    it("knows that a password is valid if it contains a number", () => {
-      //Arrange
-      //Act
-      const result = PasswordValidator.validate("AaAa1");
-      //Assert
-      expect(result.isValid).toBeTruthy();
-      expect(result.errors.length).toBe(0);
     });
 
     it("knows that a password is not valid if it does not contain a uppercase letter", () => {
@@ -70,7 +52,8 @@ describe('PasswordValidator', () => {
       expect(result.errors.length).toBeGreaterThan(0);
     });
 
-    it("knows that a password is valid if it contains a uppercase letter", () => {
+    it.each(["Aaaa1","AaAa1","Aa1Aa1Aa1Aa1Aa1"])
+    ("knows that a password is valid if it contains a uppercase letter, a number and lenght is between 5 and 15 like: %s", () => {
       //Arrange
       //Act
       const result = PasswordValidator.validate("Aaaa1");
