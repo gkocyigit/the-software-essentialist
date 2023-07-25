@@ -1,8 +1,11 @@
 
-describe('password validator', () => {
+describe('PasswordValidator', () => {
 
-  test('hello', () => {
-    expect("between 5 and 15").toContain('5 and 15')
+  describe('validate', () => {
+    it("should be defined", () => {
+
+      expect(PasswordValidator.validate).toBeDefined();
+    });
   })
 })
 
