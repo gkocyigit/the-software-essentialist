@@ -24,6 +24,7 @@ describe('PasswordValidator', () => {
       //Assert
       expect(result.isValid).toBeFalsy();
       expect(result.errors.length).toBeGreaterThan(0);
+      expect(result.errors).toContainEqual(expect.stringContaining("between 5 and 15 characters"))
     });
 
     it.each(["AaAaA"])
@@ -44,15 +45,6 @@ describe('PasswordValidator', () => {
       //Assert
       expect(result.isValid).toBeFalsy();
       expect(result.errors.length).toBeGreaterThan(0);
-    });
-
-    it("knows that a password is not valid and returns error indicating password should be between 5 and 15 characters", () => {
-      //Arrange
-      //Act
-      const result = PasswordValidator.validate("Aa1");
-      //Assert
-      expect(result.isValid).toBeFalsy();
-      expect(result.errors).toContainEqual(expect.stringContaining("between 5 and 15 characters"))
     });
 
     it.each(["Aaaa1","AaAa1","Aa1Aa1Aa1Aa1Aa1"])
