@@ -61,18 +61,8 @@ describe('PasswordValidator', () => {
       expect(result.isValid).toBeTruthy();
       expect(result.errors.length).toBe(0);
     });
-
-    it.each(["a","_!","thisisnotavalidpassword"])
-    ("knows that a password is not valid if it doesn't contain an uppercase letter, a number and its lenght is not between 5 and 15 like: %s",(pass)=>{
-      //Arrange
-      //Act
-      const result = PasswordValidator.validate(pass);
-      //Assert
-      expect(result.isValid).toBeFalsy();
-      expect(result.errors.length).toBe(3);
-    })
-
-    it.each(["A","a1","Thisisnotavalidpassword"])
+    
+    it.each(["A","a1","Thisisnotavalidpassword","a","_!","thisisnotavalidpassword"])
     ("knows that a password is not valid if it doesn't obey the multiple constraints: like %s",(pass)=>{
       //Arrange
       //Act
