@@ -46,6 +46,7 @@ describe('PasswordValidator', () => {
       //Assert
       expect(result.isValid).toBeFalsy();
       expect(result.errors.length).toBeGreaterThan(0);
+      expect(result.errors).toContainEqual(expect.stringContaining("contain an uppercase letter"))
     });
 
     it.each(["Aaaa1","AaAa1","Aa1Aa1Aa1Aa1Aa1"])
