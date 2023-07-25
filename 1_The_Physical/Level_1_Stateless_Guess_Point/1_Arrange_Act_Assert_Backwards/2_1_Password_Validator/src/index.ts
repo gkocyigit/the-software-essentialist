@@ -12,6 +12,12 @@ export class PasswordValidator{
             isValid = false;
             errors.push("Password must be between 5 and 15 characters");
         }
+
+        if (!/[A-Z]/.test(password)) {
+            isValid = false;
+            errors.push("Password must contain an uppercase letter");
+        }
+
         return {
             isValid,
             errors,
