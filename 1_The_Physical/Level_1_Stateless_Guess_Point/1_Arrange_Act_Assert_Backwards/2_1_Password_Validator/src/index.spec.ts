@@ -72,6 +72,16 @@ describe('PasswordValidator', () => {
       expect(result.errors.length).toBe(3);
     })
 
+    it.each(["A","a1","Thisisnotavalidpassword"])
+    ("knows that a password is not valid if it doesn't obey the multiple constraints: like %s",(pass)=>{
+      //Arrange
+      //Act
+      const result = PasswordValidator.validate(pass);
+      //Assert
+      expect(result.isValid).toBeFalsy();
+      expect(result.errors.length).toBeGreaterThan(1);
+    });
+
   })
 })
 
