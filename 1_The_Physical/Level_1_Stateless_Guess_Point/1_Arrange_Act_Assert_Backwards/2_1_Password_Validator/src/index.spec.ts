@@ -16,6 +16,15 @@ describe('PasswordValidator', () => {
       expect(result.errors).toBeDefined();
     });
 
+    it("knows that a password is not valid if it is less than 5 characters", () => {
+      //Arrange
+      //Act
+      const result = PasswordValidator.validate("Aa1");
+      //Assert
+      expect(result.isValid).toBeFalsy();
+      expect(result.errors.length).toBeGreaterThan(0);
+    });
+
   })
 })
 
