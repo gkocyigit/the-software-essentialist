@@ -7,7 +7,7 @@ describe('PasswordValidator', () => {
       expect(PasswordValidator.validate).toBeDefined();
     });
 
-    it("should return object indicating if the password is valid or not", () => {
+    it("should return object indicating if the password is valid or not and the reasoning", () => {
       //Arrange
       //Act
       const result = PasswordValidator.validate("123");
