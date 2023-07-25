@@ -53,10 +53,10 @@ describe('PasswordValidator', () => {
     });
 
     it.each(["Aaaa1","AaAa1","Aa1Aa1Aa1Aa1Aa1"])
-    ("knows that a password is valid if it contains a uppercase letter, a number and lenght is between 5 and 15 like: %s", () => {
+    ("knows that a password is valid if it contains a uppercase letter, a number and lenght is between 5 and 15 like: %s", (pass) => {
       //Arrange
       //Act
-      const result = PasswordValidator.validate("Aaaa1");
+      const result = PasswordValidator.validate(pass);
       //Assert
       expect(result.isValid).toBeTruthy();
       expect(result.errors.length).toBe(0);
