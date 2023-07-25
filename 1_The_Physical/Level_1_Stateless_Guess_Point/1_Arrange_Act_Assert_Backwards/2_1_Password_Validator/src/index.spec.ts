@@ -46,6 +46,16 @@ describe('PasswordValidator', () => {
       expect(result.isValid).toBeFalsy();
       expect(result.errors.length).toBeGreaterThan(0);
     });
+    
+    it.each(["AaAaA"])
+    ("knows that a password is not valid if it does not contain number and indicates in the error message: like %s", (pass) => {
+      //Arrange
+      //Act
+      const result = PasswordValidator.validate(pass);
+      //Assert
+      expect(result.isValid).toBeFalsy();
+      expect(result.errors).toContainEqual(expect.stringContaining("contain a number"))
+    });
 
     it.each(["Aaaa1","AaAa1","Aa1Aa1Aa1Aa1Aa1"])
     ("knows that a password is valid if it contains a uppercase letter, a number and lenght is between 5 and 15 like: %s", (pass) => {
