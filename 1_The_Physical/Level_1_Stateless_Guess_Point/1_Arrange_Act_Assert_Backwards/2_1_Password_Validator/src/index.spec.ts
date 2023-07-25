@@ -25,6 +25,15 @@ describe('PasswordValidator', () => {
       expect(result.errors.length).toBeGreaterThan(0);
     });
 
+    it("knows that a password is not valid if it is more than 15 characters", () => {
+      //Arrange
+      //Act
+      const result = PasswordValidator.validate("Aa1Aa1Aa1Aa1Aa1Aa1Aa1Aa1Aa1Aa1");
+      //Assert
+      expect(result.isValid).toBeFalsy();
+      expect(result.errors.length).toBeGreaterThan(0);
+    });
+
   })
 })
 
