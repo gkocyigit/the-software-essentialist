@@ -61,6 +61,15 @@ describe('PasswordValidator', () => {
       expect(result.errors.length).toBe(0);
     });
 
+    it("knows that a password is not valid if it does not contain a uppercase letter", () => {
+      //Arrange
+      //Act
+      const result = PasswordValidator.validate("aaaa1");
+      //Assert
+      expect(result.isValid).toBeFalsy();
+      expect(result.errors.length).toBeGreaterThan(0);
+    });
+
   })
 })
 
