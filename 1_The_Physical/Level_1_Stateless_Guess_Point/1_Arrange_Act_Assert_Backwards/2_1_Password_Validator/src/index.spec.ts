@@ -1,3 +1,4 @@
+import {PasswordValidator} from './index';
 
 describe('PasswordValidator', () => {
 
